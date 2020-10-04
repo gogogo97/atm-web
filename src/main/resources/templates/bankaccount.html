@@ -37,6 +37,8 @@
 
     <h1>All Bank Accounts</h1>
 
+
+<!--    อาจารย์ครับ แก้ไปแก้มาข้อมูลไม่แสดงจาก database ทั้งๆที่มีข้อมูลครับ warning หรือ error ก็ไม่มี-->
     <table class="table table-bordered table-striped">
         <thead class="thead-light">
         <tr>
@@ -45,7 +47,6 @@
             <th>Type</th>
             <th>Balance</th>
             <th>Actions</th>
-            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
@@ -57,10 +58,10 @@
             <td>
                 <a class="btn btn-primary"
                         th:href="@{/bankaccount/edit/{id}(id=${account.id})}">Edit</a>
+                <form th:action="@{/bankaccount/delete/{id}(id=${account.id})}" method="POST">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
             </td>
-            <form th:action="@{/bankaccount/delete/{id}(id=${account.id})}" method="POST">
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
         </tr>
         </tbody>
     </table>
