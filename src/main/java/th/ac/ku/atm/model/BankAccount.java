@@ -9,6 +9,8 @@ public class BankAccount {
     private int customerId;
     private String type;
     private double balance;
+//    ผมเพิ่ม withdraw กับ deposit เอาไว้อ่านค่าถอนกับฝากครับ
+//    ใน Database ผมก็เพิ่ม column deposit กับ withdraw ไปเช่นกัน
     private double withdraw;
     private double deposit;
 
