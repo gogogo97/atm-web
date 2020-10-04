@@ -58,10 +58,9 @@
                 <a class="btn btn-primary"
                         th:href="@{/bankaccount/edit/{id}(id=${account.id})}">Edit</a>
             </td>
-            <td>
-                <a class="btn "
-                   th:href="@{/bankaccount/delete/{id}(id=${account.id})}">Delete</a>
-            </td>
+            <form th:action="@{/bankaccount/delete/{id}(id=${account.id})}" method="POST">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
         </tr>
         </tbody>
     </table>

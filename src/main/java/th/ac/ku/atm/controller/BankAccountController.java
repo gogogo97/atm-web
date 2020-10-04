@@ -30,13 +30,6 @@ public class BankAccountController {
     }
 
 
-    @PostMapping
-    public String registerBankAccount(@ModelAttribute BankAccount bankAccount, Model model) {
-        accountService.createBankAccount(bankAccount);
-        model.addAttribute("allBankAccounts", accountService.getBankAccounts());
-        return "redirect:bankaccount";
-    }
-
     @GetMapping("/edit/{id}")
     public String getEditBankAccountPage(@PathVariable int id, Model model) {
         BankAccount account = accountService.getBankAccount(id);
